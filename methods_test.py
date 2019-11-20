@@ -10,15 +10,17 @@ class Timer:
 
     def __init__(self):
         self.speeds = []
+        self.arraySize = []
 
     def array_builder(self, number):
+        self.arraySize.append(number)
         return np.random.randint(1, 101, number)
 
     def run_test(self, array, method):
         start = time.process_time()
         method(array)
         end = time.process_time()
-        speed = (end - start)*1000000
+        speed = (end - start)*1000
         self.speeds.append(speed)
 
 
@@ -28,6 +30,7 @@ if __name__ == '__main__':
         test_list = timeTest.array_builder(i)
         # get_first is just method taking index 0 of array
         timeTest.run_test(test_list, get_first)
-    plt.plot(timeTest.speeds)
-    plt.ylabel('executionTime')
+    plt.plot(timeTest.arraySize, timeTest.speeds)
+    plt.ylabel('execution Time(seconds)')
+    plt.xlabel('number of items in List')
     plt.show()
