@@ -28,7 +28,6 @@ def test_and_graph(range1, increments, upperlimit, method):
     timeTest = Timer()
     for i in range(1, range1, increments):
         test_list = timeTest.array_builder(upperlimit, i)
-        # get_first is just method taking index 0 of array
         timeTest.run_timer(test_list, method)
     plt.plot(timeTest.arraySize, timeTest.speeds)
 

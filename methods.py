@@ -13,16 +13,15 @@ class Methods:
         return counter
 
     def no_primes(self, data):
-        def is_prime(x):
-            if x >= 2:
-                for y in range(2, int(math.sqrt(x))):
-                    if not (x % y):
-                        return False
-            else:
-                return False
+        counterV = 0
+
+        def is_prime(n):
+            for i in range(2, int(n**0.5)+1):
+                if n % i == 0:
+                    return False
             return True
-        counter = 0
+
         for i in data:
             if is_prime(i):
-                counter += 1
-        return counter
+                counterV += 1
+        return counterV
