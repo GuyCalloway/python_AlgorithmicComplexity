@@ -1,27 +1,8 @@
 import unittest
-import numpy as np
 from methods import Methods
-import time
+from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
-
-
-class Timer:
-
-    def __init__(self):
-        self.speeds = []
-        self.arraySize = []
-
-    def array_builder(self, upperlimit, number):
-        self.arraySize.append(number)
-        return np.random.randint(1, upperlimit, number)
-
-    def run_timer(self, array, method):
-        start = time.process_time()
-        method(array)
-        end = time.process_time()
-        speed = (end - start)
-        self.speeds.append(speed)
 
 
 def test_and_graph(range1, increments, upperlimit, method):

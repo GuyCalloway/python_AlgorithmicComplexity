@@ -24,4 +24,5 @@ class Methods:
         for i in data:
             if is_prime(i):
                 counterV += 1
+
         return counterV
