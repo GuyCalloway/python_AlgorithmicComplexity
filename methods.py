@@ -29,8 +29,16 @@ class Methods:
         return counterV
 
     def shuffle(self, data):
-        shuffled = []
+        shuffled = [None] * len(data)
+        # fixed array here faster to process than adding randomly to empty array
         for i in data:
-            index = random.randint(0, len(shuffled))
-            shuffled.insert(index, i)
+            index = random.randint(0, (len(shuffled)-1))
+            shuffled[index] = i
         return shuffled
+
+    def reverse(self, data):
+        length = len(data)
+        reversed = [None] * length
+        for i, element in enumerate(data):
+            reversed[(length-1) - i] = element
+        return reversed
