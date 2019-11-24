@@ -1,4 +1,5 @@
 import math
+import random
 
 
 class Methods:
@@ -26,3 +27,10 @@ class Methods:
                 counterV += 1
 
         return counterV
+
+    def shuffle(self, data):
+        shuffled = []
+        for i in data:
+            index = random.randint(0, len(shuffled))
+            shuffled.insert(index, i)
+        return shuffled

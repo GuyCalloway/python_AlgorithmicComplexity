@@ -18,6 +18,7 @@ if __name__ == '__main__':
     test_and_graph(10000, 50, 150, methods.get_first)  # blue
     test_and_graph(10000, 50, 150, methods.count)  # orange
     test_and_graph(10000, 50, 150, methods.no_primes)  # green
+    test_and_graph(10000, 50, 150, methods.shuffle)  # red
     plt.ylabel('execution Time(ms)')
     plt.xlabel('number of items in List')
     plt.show()
