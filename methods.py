@@ -1,6 +1,6 @@
 import math
 import random
-import numpy
+# import numpy
 
 
 class Methods:
