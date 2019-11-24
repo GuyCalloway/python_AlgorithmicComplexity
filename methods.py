@@ -30,11 +30,10 @@ class Methods:
         return counterV
 
     def shuffle(self, data):
-        shuffled = [None] * len(data)
-        # fixed array here faster to process than adding randomly to empty array
+        shuffled = []
         for i in data:
-            index = random.randint(0, (len(shuffled)-1))
-            shuffled[index] = i
+            index = random.randint(0, len(shuffled))
+            shuffled.insert(index, i)
         return shuffled
 
     def reverse(self, data):
