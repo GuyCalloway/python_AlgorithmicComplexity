@@ -50,3 +50,18 @@ class Methods:
             z = data[(i*-1)-1]
             reversed[i] = z
         return reversed
+
+    def find_duplicates(self, data):
+        seen = {}
+        dupes = []
+
+        for x in data:
+            if x not in seen:
+                seen[x] = 1
+            else:
+                seen[x] += 1
+
+        for k in seen.keys():
+            if seen[k] == 2:
+                dupes.append(k)
+        return dupes
