@@ -65,3 +65,19 @@ class Methods:
             if seen[k] == 2:
                 dupes.append(k)
         return dupes
+
+    def find_most_freq_values(self, data):
+        seen = {}
+
+        for x in data:
+            if x not in seen:
+                seen[x] = 1
+            else:
+                seen[x] += 1
+        mostFreq = []
+        v = list(seen.values())
+        f = max(v)
+        for x in seen.keys():
+            if seen[x] == f:
+                mostFreq.append(x)
+        return mostFreq
