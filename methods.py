@@ -42,3 +42,8 @@ class Methods:
         for i, element in enumerate(data):
             reversed[(length-1) - i] = element
         return reversed
+
+    def reverse2(self, data):
+        for i, _ in enumerate(data):
+            data.insert(i, data.pop())
+        return data

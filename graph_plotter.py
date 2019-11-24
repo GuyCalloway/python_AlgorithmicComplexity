@@ -15,11 +15,12 @@ def test_and_graph(range1, increments, upperlimit, method):
 
 if __name__ == '__main__':
     methods = Methods()
-    test_and_graph(10000, 50, 150, methods.get_first)  # blue
-    test_and_graph(10000, 50, 150, methods.count)  # orange
-    test_and_graph(10000, 50, 150, methods.no_primes)  # green
-    test_and_graph(10000, 50, 150, methods.shuffle)
+    # test_and_graph(10000, 50, 150, methods.get_first)  # blue
+    # test_and_graph(10000, 50, 150, methods.count)  # orange
+    # test_and_graph(10000, 50, 150, methods.no_primes)  # green
+    # test_and_graph(10000, 50, 150, methods.shuffle)
     test_and_graph(10000, 50, 150, methods.reverse)  # red
+    test_and_graph(10000, 50, 150, methods.reverse2)  # red
     plt.ylabel('execution Time(ms)')
     plt.xlabel('number of items in List')
     plt.show()
