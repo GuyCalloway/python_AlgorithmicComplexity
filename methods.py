@@ -1,5 +1,6 @@
 import math
 import random
+import numpy
 
 
 class Methods:
@@ -44,6 +45,8 @@ class Methods:
         return reversed
 
     def reverse2(self, data):
+        reversed = [None] * len(data)
         for i, _ in enumerate(data):
-            data.insert(i, data.pop())
-        return data
+            z = data[(i*-1)-1]
+            reversed[i] = z
+        return reversed
