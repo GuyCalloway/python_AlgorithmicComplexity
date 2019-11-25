@@ -3,6 +3,7 @@ from methods import Methods
 from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
+# Using Pandas. They are dataframe
 
 
 def test_method_and_plot(range1, increments, upperlimit, method):
@@ -26,10 +27,9 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 
 if __name__ == '__main__':
     methods = Methods()
-    method_list = [methods.reverse,
-                   methods.find_duplicates, methods.find_most_freq_values, methods.shuffle]
-    range1 = 100000
-    increments = 5000
+    method_list = [methods.sortit]
+    range1 = 10000
+    increments = 500
     upperlimit = 150
 
     loop_through_methods_and_show_graph(

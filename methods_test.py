@@ -26,6 +26,15 @@ class TestMethods(unittest.TestCase):
         list1 = [5, 1, 2, 3, 3, 3, 1, 4, 5, 5, 6, 4, 4, 7]
         self.assertEqual(result.find_most_freq_values(list1), [5, 3, 4])
 
+    def test_sortit(self):
+        result = Methods()
+        list1 = [5, 1, 2, 3, 3, 3, 1, 4, 5, 5, 6, 4, 4, 7]
+        list2 = [5, 3, 1, 1, 1, 8, 8, 8, 9, 7, 3, 1, 1, 1]
+        self.assertEqual(result.sortit(list1), [
+                         1, 1, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 7])
+        self.assertEqual(result.sortit(list2), [
+                         1, 1, 1, 1, 1, 1, 3, 3, 5, 7, 8, 8, 8, 9])
+
 
 if __name__ == '__main__':
     unittest.main()

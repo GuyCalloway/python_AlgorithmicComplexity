@@ -51,32 +51,40 @@ class Methods:
         return reversed
 
     def find_duplicates(self, data):
-        seen = {}
+        dictionary_count = {}
         dupes = []
 
         for x in data:
-            if x not in seen:
-                seen[x] = 1
+            if x not in dictionary_count:
+                dictionary_count[x] = 1
             else:
-                seen[x] += 1
+                dictionary_count[x] += 1
 
-        for k in seen.keys():
-            if seen[k] == 2:
+        for k in dictionary_count.keys():
+            if dictionary_count[k] == 2:
                 dupes.append(k)
         return dupes
 
     def find_most_freq_values(self, data):
-        seen = {}
+        count_dictionary = {}
 
         for x in data:
-            if x not in seen:
-                seen[x] = 1
+            if x not in count_dictionary:
+                count_dictionary[x] = 1
             else:
-                seen[x] += 1
+                count_dictionary[x] += 1
         mostFreq = []
-        v = list(seen.values())
+        v = list(count_dictionary.values())
         f = max(v)
-        for x in seen.keys():
-            if seen[x] == f:
+        for x in count_dictionary.keys():
+            if count_dictionary[x] == f:
                 mostFreq.append(x)
         return mostFreq
+
+    def sortit(self, data):
+        for n in range(len(data)):
+            for i, x in enumerate(data):
+                if i != (len(data) - 1):
+                    if x > data[i+1]:
+                        data[i], data[i+1] = data[i+1], data[i]
+        return data
