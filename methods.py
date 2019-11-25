@@ -88,3 +88,16 @@ class Methods:
                     if x > data[i+1]:
                         data[i], data[i+1] = data[i+1], data[i]
         return data
+
+    def sortit2(self, data):
+        for index in range(1, len(data)):
+            value = data[index]
+            i = index - 1
+            while i >= 0:
+                if value < data[i]:
+                    data[i+1] = data[i]
+                    data[i] = value
+                    i -= 1
+                else:
+                    break
+        return data
