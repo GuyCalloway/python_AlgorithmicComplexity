@@ -3,7 +3,16 @@ from methods import Methods
 from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
-# Use Pandas. They are dataframe
+
+
+def test_Int_number_input(range1, increments, method):
+    timeTest = Timer()
+
+    for i in range(1, range1, increments):
+        timeTest.setXAxis(i)
+        timeTest.run_timer(i, method)
+
+    plt.plot(timeTest.xAxis, timeTest.speeds)
 
 
 def test_method_and_plot(range1, increments, upperlimit, method):
@@ -13,13 +22,13 @@ def test_method_and_plot(range1, increments, upperlimit, method):
         test_arr = timeTest.array_builder(upperlimit, i)
         timeTest.run_timer(test_arr, method)
 
-    plt.plot(timeTest.arraySize, timeTest.speeds)
+    plt.plot(timeTest.xAxis, timeTest.speeds)
 
 
 def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_list):
     for m in method_list:
         test_method_and_plot(range1, increments, upperlimit, m)
-
+        #test_Int_number_input(range1, increments, m)
     plt.ylabel('execution Time(ms)')
     plt.xlabel('number of items in List')
     plt.show()
@@ -27,10 +36,11 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 
 if __name__ == '__main__':
     methods = Methods()
-    method_list = [methods.sortit2, methods.sortit]
-    range1 = 1000
-    increments = 50
-    upperlimit = 150
+    method_list = [methods.shuffle, methods.reverse,
+                   methods.find_most_freq_values]
+    range1 = 10000
+    increments = 500
+    upperlimit = 101
 
     loop_through_methods_and_show_graph(
         range1, increments, upperlimit, method_list)

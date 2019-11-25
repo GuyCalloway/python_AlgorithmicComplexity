@@ -1,6 +1,6 @@
 import math
 import random
-# import numpy
+import numpy as np
 
 
 class Methods:
@@ -101,3 +101,22 @@ class Methods:
                 else:
                     break
         return data
+
+    def sort0n1s(self, data):
+        count = 0
+        for x in data:
+            if x == 0:
+                count += 1
+
+    def fibonacci(self, N):
+        calco = [0, 1]
+        if N == 0:
+            return []
+        elif N == 1:
+            return [0]
+        elif N == 2:
+            return calco
+        else:
+            for _ in range(2, N):
+                calco.append(calco[-1] + calco[-2])
+        return calco
