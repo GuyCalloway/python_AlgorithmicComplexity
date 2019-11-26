@@ -36,11 +36,10 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 
 if __name__ == '__main__':
     methods = Methods()
-    method_list = [methods.shuffle, methods.reverse,
-                   methods.find_most_freq_values]
+    method_list = [methods.sort0n1s]
     range1 = 10000
     increments = 500
-    upperlimit = 101
+    upperlimit = 1
 
     loop_through_methods_and_show_graph(
         range1, increments, upperlimit, method_list)

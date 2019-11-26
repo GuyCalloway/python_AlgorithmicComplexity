@@ -102,11 +102,17 @@ class Methods:
                     break
         return data
 
-    #  def sort0n1s(self, data):
-    #     count = 0
-    #     for x in data:
-    #         if x == 0:
-    #             count += 1
+    def sort0n1s(self, data):
+        count = 0
+        nu = []
+        for x in data:
+            if x == 0:
+                nu.append(0)
+                count += 1
+        z = len(data) - count
+        for _ in range(0, z):
+            nu.append(1)
+        return nu
 
     def fibonacci(self, N):
         calco = [0, 1]
@@ -131,11 +137,11 @@ class Methods:
                 if name != name_array[x]:
                     name_couples.append([name, name_array[x]])
 
-        length2 = len(name_couples)
+        num_of_couples = len(name_couples)
         name_pairs = []
 
         for index, couple in enumerate(name_couples):
-            for x in range(index, length2):
+            for x in range(index, num_of_couples):
                 if not self.find_duplicates(flatten([couple, name_couples[x]])):
                     name_pairs.append([couple, name_couples[x]])
         return name_pairs
