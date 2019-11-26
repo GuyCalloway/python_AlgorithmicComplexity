@@ -9,4 +9,4 @@ Look up DIVIDE AND CONQUER and recursive strategies
 
 Look up Quicksort and Mergesort (use divide and combine stages differently in sorting)
 
-For sorting: USE SWAP IN FUCNTION: Take first Item and swap with random integer, comb thru whole ARRAY
+For shuffle: USE SWAP IN FUCNTION: Take first Item and swap with random integer, comb thru whole ARRAY
