@@ -35,11 +35,20 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(result.sortit2(list2), [
                          1, 1, 1, 1, 1, 1, 3, 3, 5, 7, 8, 8, 8, 9])
 
-    def test_sort0n1s(self):
+    #  def test_sort0n1s(self):
+    #     result = Methods()
+    #     list1 = [0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
+    #     self.assertEqual(result.sort0n1s(list1), [
+    #                      0, 0, 0, 0, 0, 0, 1, 1, 1, 1])
+
+    def test_mecha_coach(self):
         result = Methods()
-        list1 = [0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
-        self.assertEqual(result.sort0n1s(list1), [
-                         0, 0, 0, 0, 0, 0, 1, 1, 1, 1])
+        list1 = ["Alice", "Bob", "Charly", "Dan"]
+        self.assertEqual(result.mecha_coach(list1), [
+            [["Alice", "Bob"], ["Charly", "Dan"]],
+            [["Alice", "Charly"], ["Bob", "Dan"]],
+            [["Alice", "Dan"], ["Bob", "Charly"]],
+        ])
 
 
 if __name__ == '__main__':

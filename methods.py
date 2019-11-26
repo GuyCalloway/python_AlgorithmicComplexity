@@ -102,11 +102,11 @@ class Methods:
                     break
         return data
 
-    def sort0n1s(self, data):
-        count = 0
-        for x in data:
-            if x == 0:
-                count += 1
+    #  def sort0n1s(self, data):
+    #     count = 0
+    #     for x in data:
+    #         if x == 0:
+    #             count += 1
 
     def fibonacci(self, N):
         calco = [0, 1]
@@ -120,3 +120,22 @@ class Methods:
             for _ in range(2, N):
                 calco.append(calco[-1] + calco[-2])
         return calco
+
+    def mecha_coach(self, name_array):
+        def flatten(l): return [item for sublist in l for item in sublist]
+        name_couples = []
+        length = len(name_array)
+        for i, name in enumerate(name_array):
+
+            for x in range(i, length):
+                if name != name_array[x]:
+                    name_couples.append([name, name_array[x]])
+
+        length2 = len(name_couples)
+        name_pairs = []
+
+        for index, couple in enumerate(name_couples):
+            for x in range(index, length2):
+                if not self.find_duplicates(flatten([couple, name_couples[x]])):
+                    name_pairs.append([couple, name_couples[x]])
+        return name_pairs
