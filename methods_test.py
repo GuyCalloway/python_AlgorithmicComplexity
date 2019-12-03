@@ -17,9 +17,10 @@ class TestMethods(unittest.TestCase):
 
     def test_if_shuffles_list(self):
         result = Methods()
-        list1 = [5, 1, 2, 3, 1, 4, 5, 5, 6, 4, 7]
-        self.assertNotEqual(result.shuffle(list1), list1)
-        self.assertEqual(len(result.shuffle(list1)), len(list1))
+        list1 = [5, 1, 2, 3, 10, 1, 4, 5, 5, 6, 4, 7, 10]
+        self.assertNotEqual(result.shuffle3(list1), [
+                            5, 1, 2, 3, 10, 1, 4, 5, 5, 6, 4, 7, 10])
+        self.assertEqual(len(result.shuffle3(list1)), len(list1))
 
     def test_find_most_feq_val(self):
         result = Methods()
@@ -49,6 +50,14 @@ class TestMethods(unittest.TestCase):
             [["Alice", "Charly"], ["Bob", "Dan"]],
             [["Alice", "Dan"], ["Bob", "Charly"]],
         ])
+
+    def test_fibonacci(self):
+        result = Methods()
+        self.assertEqual(result.fibonacci(1), [0])
+        self.assertEqual(result.fibonacci(0), [])
+        self.assertEqual(result.fibonacci(2), [0, 1])
+        self.assertEqual(result.fibonacci(3), [0, 1, 1])
+        self.assertEqual(result.fibonacci(7), [0, 1, 1, 2, 3, 5, 8])
 
 
 if __name__ == '__main__':

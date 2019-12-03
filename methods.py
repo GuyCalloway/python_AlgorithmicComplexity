@@ -36,6 +36,20 @@ class Methods:
             shuffled.insert(index, i)
         return shuffled
 
+    def shuffle2(self, data):
+        length = len(data)
+        for _ in range(1, length):
+            index = random.randint(0, (len(data)-1))
+            data[0], data[index] = data[index], data[0]
+        return data
+
+    def shuffle3(self, data):
+        length = len(data)
+        arr = np.random.randint(0, length, length)
+        for x in range(1, length):
+            data[0], data[arr[x]] = data[arr[x]], data[0]
+        return data
+
     def reverse(self, data):
         length = len(data)
         reversed = [None] * length
@@ -116,19 +130,18 @@ class Methods:
 
     def fibonacci(self, N):
         calco = [0, 1]
-        if N == 0:
+        if N > 2:
+            for _ in range(2, N):
+                calco.append(calco[-1] + calco[-2])
+        elif N == 0:
             return []
         elif N == 1:
             return [0]
-        elif N == 2:
-            return calco
-        else:
-            for _ in range(2, N):
-                calco.append(calco[-1] + calco[-2])
         return calco
 
     def mecha_coach(self, name_array):
-        def flatten(l): return [item for sublist in l for item in sublist]
+        def flatten(lists): return [
+            item for sublist in lists for item in sublist]
         name_couples = []
         length = len(name_array)
         for i, name in enumerate(name_array):
