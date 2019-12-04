@@ -29,15 +29,6 @@ class Methods:
 
         return counterV
 
-    def splitter(self, arr):
-        res = []
-        segments = math.floor(len(arr)/2)
-        x = 0
-        for _ in range(segments):
-            res.append(arr[math.floor(((x/segments) * len(arr)))
-                       :math.floor(((x+1)/segments)*len(arr))])
-            x += 1
-
     def shuffle(self, data):
         shuffled = []
         for i in data:

@@ -1,6 +1,6 @@
 import unittest
 from methods import Methods
-from refined import MergeSort
+from merge_sort import MergeSort
 from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
