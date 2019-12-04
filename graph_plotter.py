@@ -38,10 +38,10 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 if __name__ == '__main__':
     # stocks = Stocks()
     mergesort = MergeSort()
-    methods2 = Methods()
-    method_list = [MergeSort.sort]
-    range1 = 100000
-    increments = 5000
+    methods = Methods()
+    method_list = [methods.sortit2, mergesort.sort]
+    range1 = 1000
+    increments = 50
     upperlimit = 50
 
     loop_through_methods_and_show_graph(
