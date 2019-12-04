@@ -1,14 +1,13 @@
 import unittest
 from methods import Methods
-from refined import RefinedSort
+from refined import MergeSort
 
 
 class TestMethods(unittest.TestCase):
     def test_if_method_merges_two_sorted_arrays(self):
-        result = RefinedSort()
-        list1 = [1, 1, 2, 5, 7, 10]
-        list2 = [3, 4, 5, 5, 6, 11]
-        self.assertEqual(result.merge_2_sorted_arrays(list1, list2), [
+        result = MergeSort()
+        list1 = [1, 1, 2, 5, 7, 10, 3, 4, 5, 5, 6, 11]
+        self.assertEqual(result.sort(list1), [
                          1, 1, 2, 3, 4, 5, 5, 5, 6, 7, 10, 11])
 
     def test_if_method_reverses_string(self):

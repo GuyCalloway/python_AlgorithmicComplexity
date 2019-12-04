@@ -1,6 +1,6 @@
 import unittest
 from methods import Methods
-# from stocks import Stocks
+from refined import MergeSort
 from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
@@ -37,10 +37,11 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 
 if __name__ == '__main__':
     # stocks = Stocks()
-    methods = Methods()
-    method_list = [methods.splitter]
-    range1 = 1000000
-    increments = 50000
+    mergesort = MergeSort()
+    methods2 = Methods()
+    method_list = [MergeSort.sort]
+    range1 = 100000
+    increments = 5000
     upperlimit = 50
 
     loop_through_methods_and_show_graph(
