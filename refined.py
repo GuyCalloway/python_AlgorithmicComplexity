@@ -1,3 +1,6 @@
+import math
+
+
 class RefinedSort:
     def merge_2_sorted_arrays(self, arr1, arr2):
         len1 = len(arr1)
@@ -26,4 +29,11 @@ class RefinedSort:
             k += 1
         return(result)
 
-    def split_array(arr):
+    def split_array(self, arr):
+        res = []
+        segments = math.floor(len(arr)/2)
+        x = 0
+        for _ in range(segments):
+            res.append(arr[math.floor(((x/segments) * len(arr)))                           :math.floor(((x+1)/segments)*len(arr))])
+            x += 1
+        return res

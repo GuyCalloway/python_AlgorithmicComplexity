@@ -38,9 +38,9 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 if __name__ == '__main__':
     # stocks = Stocks()
     methods = Methods()
-    method_list = [methods.shuffle2, methods.shuffle3]
-    range1 = 100000
-    increments = 5000
+    method_list = [methods.splitter]
+    range1 = 1000000
+    increments = 50000
     upperlimit = 50
 
     loop_through_methods_and_show_graph(
