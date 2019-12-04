@@ -1,6 +1,6 @@
 import unittest
 from methods import Methods
-from stocks import Stocks
+# from stocks import Stocks
 from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
@@ -36,7 +36,7 @@ def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_l
 
 
 if __name__ == '__main__':
-    stocks = Stocks()
+    # stocks = Stocks()
     methods = Methods()
     method_list = [methods.shuffle2, methods.shuffle3]
     range1 = 100000
