@@ -1,6 +1,7 @@
 import unittest
 from methods import Methods
 from merge_sort import MergeSort
+from quick_sort import QuickSort
 
 
 class TestMethods(unittest.TestCase):
@@ -64,6 +65,11 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(result.fibonacci(2), [0, 1])
         self.assertEqual(result.fibonacci(3), [0, 1, 1])
         self.assertEqual(result.fibonacci(7), [0, 1, 1, 2, 3, 5, 8])
+
+    def test_quick_sort(self):
+        result = QuickSort()
+        self.assertEqual(result.pivot([5, 7, 5, 7, 1, 7, 6, 53, 7, 5, 6, 7, 45, 5, 3, 1, 5, 6, 7, 7, 5]), [
+            2, 1, 4, 3, 5, 8, 7, 9, 6])
 
 
 if __name__ == '__main__':
