@@ -33,6 +33,6 @@ def sort(arr):
     if len(arr) < 2:
         return arr
     (left, right) = splitter(arr)
-    sorted_left = sort1(left)
-    sorted_right = sort1(right)
+    sorted_left = sort(left)
+    sorted_right = sort(right)
     return merge_2_sorted_arrays(sorted_left, sorted_right)

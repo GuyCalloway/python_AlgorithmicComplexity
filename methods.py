@@ -4,17 +4,17 @@ import numpy as np
 
 
 class Methods:
-    def get_first(self, data):
+    def get_first(data):
         return data[0]
 
-    def count(self, data):
+    def count(data):
         counter = 0
         for i in data:
             if i == 5:
                 counter += 1
         return counter
 
-    def no_primes(self, data):
+    def no_primes(data):
         counterV = 0
 
         def is_prime(n):
@@ -29,42 +29,42 @@ class Methods:
 
         return counterV
 
-    def shuffle(self, data):
+    def shuffle(data):
         shuffled = []
         for i in data:
             index = random.randint(0, len(shuffled))
             shuffled.insert(index, i)
         return shuffled
 
-    def shuffle2(self, data):
+    def shuffle2(data):
         length = len(data)
         for _ in range(1, length):
             index = random.randint(0, (len(data)-1))
             data[0], data[index] = data[index], data[0]
         return data
 
-    def shuffle3(self, data):
+    def shuffle3(data):
         length = len(data)
         arr = np.random.randint(0, length, length)
         for x in range(1, length):
             data[0], data[arr[x]] = data[arr[x]], data[0]
         return data
 
-    def reverse(self, data):
+    def reverse(data):
         length = len(data)
         reversed = [None] * length
         for i, element in enumerate(data):
             reversed[(length-1) - i] = element
         return reversed
 
-    def reverse2(self, data):
+    def reverse2(data):
         reversed = [None] * len(data)
         for i, _ in enumerate(data):
             z = data[(i*-1)-1]
             reversed[i] = z
         return reversed
 
-    def find_duplicates(self, data):
+    def find_duplicates(data):
         dictionary_count = {}
         dupes = []
 
@@ -79,7 +79,7 @@ class Methods:
                 dupes.append(k)
         return dupes
 
-    def find_most_freq_values(self, data):
+    def find_most_freq_values(data):
         count_dictionary = {}
 
         for x in data:
@@ -95,7 +95,7 @@ class Methods:
                 mostFreq.append(x)
         return mostFreq
 
-    def sortit(self, data):
+    def sortit(data):
         for n in range(len(data)):
             for i, x in enumerate(data):
                 if i != (len(data) - 1):
@@ -103,7 +103,7 @@ class Methods:
                         data[i], data[i+1] = data[i+1], data[i]
         return data
 
-    def sortit2(self, data):
+    def sortit2(data):
         for index in range(1, len(data)):
             value = data[index]
             i = index - 1
@@ -116,7 +116,7 @@ class Methods:
                     break
         return data
 
-    def sort0n1s(self, data):
+    def sort0n1s(data):
         count = 0
         nu = []
         for x in data:
@@ -128,7 +128,7 @@ class Methods:
             nu.append(1)
         return nu
 
-    def fibonacci(self, N):
+    def fibonacci(N):
         calco = [0, 1]
         if N > 2:
             for _ in range(2, N):
@@ -139,7 +139,7 @@ class Methods:
             return [0]
         return calco
 
-    def mecha_coach(self, name_array):
+    def mecha_coach(name_array):
         def flatten(lists): return [
             item for sublist in lists for item in sublist]
         name_couples = []
@@ -155,6 +155,6 @@ class Methods:
 
         for index, couple in enumerate(name_couples):
             for x in range(index, num_of_couples):
-                if not self.find_duplicates(flatten([couple, name_couples[x]])):
+                if not Methods.find_duplicates(flatten([couple, name_couples[x]])):
                     name_pairs.append([couple, name_couples[x]])
         return name_pairs

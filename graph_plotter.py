@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # stocks = Stocks()
     mergesort = MergeSort()
     methods = Methods()
-    method_list = [mergesort.sort, sort]
+    method_list = [sort, methods.sortit]
     range1 = 10000
     increments = 500
     upperlimit = 50
