@@ -1,6 +1,7 @@
 import unittest
 from methods import Methods
 from merge_sort import MergeSort
+from merge_sort_improved import sort
 from timer import Timer
 import matplotlib.pyplot as plt
 # import timeit
@@ -39,10 +40,9 @@ if __name__ == '__main__':
     # stocks = Stocks()
     mergesort = MergeSort()
     methods = Methods()
-    method_list = [mergesort.sort,
-                   methods.shuffle2, methods.shuffle3]
-    range1 = 100000
-    increments = 5000
+    method_list = [mergesort.sort, sort]
+    range1 = 10000
+    increments = 500
     upperlimit = 50
 
     loop_through_methods_and_show_graph(

@@ -32,10 +32,10 @@ class MergeSort:
 
     def splitter(self, arr):
         res = []
-        segments = math.ceil(len(arr)/2)
+        segments = int(math.ceil(len(arr)/2))
         x = 0
         for _ in range(segments):
-            res.append(arr[math.floor(((x/segments) * len(arr)))                           :math.floor(((x+1)/segments)*len(arr))])
+            res.append(arr[int(math.floor(((x/segments) * len(arr)))):int(math.floor(((x+1)/segments)*len(arr)))])
             x += 1
         return res
 
@@ -48,7 +48,7 @@ class MergeSort:
     def merge(self, z):
         i = 0
         res2 = []
-        for _ in range(math.ceil(len(z)/2)):
+        for _ in range(int(math.ceil(len(z)/2))):
             if i < len(z)-1:
                 res2.append(self.merge_2_sorted_arrays(z[i], z[i+1]))
                 i += 2
@@ -57,8 +57,8 @@ class MergeSort:
         return res2
 
     def sort(self, array):
-        x = self.splitter(array)
-        self.sort_couples(x)
-        while len(x) != 1:
-            x = self.merge(x)
-        return x[0]
+        result = self.splitter(array)
+        self.sort_couples(result)
+        while len(result) != 1:
+            result = self.merge(result)
+        return result[0]

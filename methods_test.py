@@ -1,15 +1,16 @@
 import unittest
 from methods import Methods
 from merge_sort import MergeSort
+from merge_sort_improved import sort
 from quick_sort import QuickSort
 
 
 class TestMethods(unittest.TestCase):
     def test_if_method_merges_two_sorted_arrays(self):
         result = MergeSort()
-        list1 = [1, 1, 2, 5, 7, 10, 3, 4, 5, 5, 6, 11]
+        list1 = [1, 2, 1, 11, 6, 5, 7, 10, 5, 4, 3, 5, 6, 11]
         self.assertEqual(result.sort(list1), [
-                         1, 1, 2, 3, 4, 5, 5, 5, 6, 7, 10, 11])
+                         1, 1, 2, 3, 4, 5, 5, 5, 6, 6, 7, 10, 11, 11])
 
     def test_if_method_reverses_string(self):
         result = Methods()
@@ -68,7 +69,7 @@ class TestMethods(unittest.TestCase):
 
     def test_quick_sort(self):
         result = QuickSort()
-        self.assertEqual(result.pivot([5, 7, 5, 7, 1, 7, 6, 53, 7, 5, 6, 7, 45, 5, 3, 1, 5, 6, 7, 7, 5]), [
+        self.assertEqual(result.pivot([5, 7, 5, 7, 1, 7, 6, 532, 2, 6, 7, 7, 5]), [
             2, 1, 4, 3, 5, 8, 7, 9, 6])
 
 
