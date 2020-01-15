@@ -62,3 +62,9 @@ class MergeSort:
         while len(result) != 1:
             result = self.merge(result)
         return result[0]
+
+
+if __name__ == "__main__":
+    assert(merge_2_sorted_arrays(
+        [2, 5, 7], [1, 2, 8, 9]) == [1, 2, 2, 5, 7, 8, 9])
+    assert(sort([2, 5, 7, 2, 3, 6, 4]) == [2, 2, 3, 4, 5, 6, 7])

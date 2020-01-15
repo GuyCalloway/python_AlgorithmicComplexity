@@ -21,15 +21,15 @@ def test_method_and_plot(range1, increments, upperlimit, method):
     timeTest = Timer()
 
     for i in range(2, range1, increments):
-        test_arr = timeTest.array_builder(upperlimit, i)
+        test_arr = timeTest.array_builder(limit, i)
         timeTest.run_timer(test_arr, method)
 
     plt.plot(timeTest.xAxis, timeTest.speeds)
 
 
-def loop_through_methods_and_show_graph(range1, increments, upperlimit, method_list):
+def loop_through_methods_and_show_graph(range1, increments, limit, method_list):
     for m in method_list:
-        test_method_and_plot(range1, increments, upperlimit, m)
+        test_method_and_plot(range1, increments, limit, m)
         #test_Int_number_input(range1, increments, m)
     plt.ylabel('execution Time(ms)')
     plt.xlabel('number of items in List')
@@ -41,10 +41,10 @@ if __name__ == '__main__':
     mergesort = MergeSort()
     methods = Methods()
     method_list = [sort, methods.sortit]
-    range1 = 10000
-    increments = 500
-    upperlimit = 50
+    upperrange = 1000
+    increments = 50
+    limit = 50
 
     loop_through_methods_and_show_graph(
-        range1, increments, upperlimit, method_list)
+        upperrange, increments, limit, method_list)
     # BLUE>ORANGE>GREEN>RED
