@@ -1,4 +1,4 @@
-# python_AlgorithmicComplexity
+# Algorithmic Complexity
 
 ## Make sure your python Environment includes:
 
