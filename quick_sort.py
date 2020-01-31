@@ -11,7 +11,7 @@ def q_splitter(arr):
             above.append(number)
         else:
             below.append(number)
-    return (below, above, pivot)
+    return (below, above, value)
 
 
 def quicksort(arr):
