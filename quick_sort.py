@@ -1,25 +1,25 @@
 import math
 
 
-def q_splitter(arr):
-    value = arr[0]
+def pivot_splitter(arr):
+    pivot = arr[0]
     above = []
     below = []
 
     for number in arr[1:]:
-        if number > value:
+        if number > pivot:
             above.append(number)
         else:
             below.append(number)
-    return (below, above, value)
+    return (below, above, pivot)
 
 
 def quicksort(arr):
     if len(arr) < 2:
         return arr
-    (left, right, pivot) = q_splitter(arr)
-    sorted_left = quicksort(left)
-    sorted_right = quicksort(right)
+    (below, above, pivot) = pivot_splitter(arr)
+    sorted_left = quicksort(below)
+    sorted_right = quicksort(above)
     result = []
     result.extend(sorted_left)
     result.append(pivot)
