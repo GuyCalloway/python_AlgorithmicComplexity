@@ -1,6 +1,7 @@
 import unittest
 from methods import Methods
-from merge_sort import MergeSort
+
+from mergesort_alice import quicksort
 from merge_sort_improved import sort
 from timer import Timer
 import matplotlib.pyplot as plt
@@ -38,10 +39,10 @@ def loop_through_methods_and_show_graph(range1, increments, limit, method_list):
 
 if __name__ == '__main__':
     # stocks = Stocks()
-    method_list = [sort, Methods.sortit, Methods.sortit2]
+    method_list = [Methods.selection_sort, quicksort, sort, Methods.sortit]
     upperrange = 1000
-    increments = 50
-    limit = 50
+    increments = 5
+    limit = 1000
 
     loop_through_methods_and_show_graph(
         upperrange, increments, limit, method_list)

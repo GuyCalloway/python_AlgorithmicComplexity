@@ -12,6 +12,14 @@ class Timer:
         self.setXAxis(length_list)
         return np.random.randint(0, upperlimit, length_list)
 
+    def array_builder_strings(self, upperlimit, length_list):
+        self.setXAxis(length_list)
+        test_array = np.random.randint(0, upperlimit, length_list)
+        test_array1 = []
+        for x in test_array:
+            test_array1.append(str(x))
+        return test_array1
+
     def setXAxis(self, number):
         self.xAxis.append(number)
 

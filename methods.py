@@ -57,6 +57,13 @@ class Methods:
             reversed[(length-1) - i] = element
         return reversed
 
+    def reverse3(data):
+        j = len(data)-1
+        for i in range(int(len(data)/2)):
+            data[i], data[j] = data[j], data[i]
+            j -= 1
+        return data
+
     def reverse2(data):
         reversed = [None] * len(data)
         for i, _ in enumerate(data):
@@ -138,6 +145,23 @@ class Methods:
         elif N == 1:
             return [0]
         return calco
+
+    def find_smallest(arr):
+        smallest = arr[0]
+        smallest_i = 0
+        for i in range(1, len(arr)):
+            if arr[i] < smallest:
+                smallest = arr[i]
+                smallest_i = i
+        return smallest_i
+
+    def selection_sort(arr):
+        new_array = []
+        for i in range(len(arr)):
+            smallest_i = Methods.find_smallest(arr)
+            new_array.append(arr[smallest_i])
+            np.delete(arr, smallest_i)
+        return new_array
 
     def mecha_coach(name_array):
         def flatten(lists): return [

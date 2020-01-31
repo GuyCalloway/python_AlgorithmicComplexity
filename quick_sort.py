@@ -2,24 +2,19 @@ import math
 
 
 def q_splitter(arr):
-    j = len(arr)-1
-    i = 1
+    value = arr[0]
+    above = []
+    below = []
 
-    while i != j:
-        print(arr)
-        if arr[0] >= arr[i]:
-            i += 1
-        if arr[0] <= arr[j]:
-            j -= 1
-
-        if arr[i] >= arr[0] and arr[j] <= arr[0]:
-            arr[i], arr[j] = arr[j], arr[i]
-
-    return arr[1:i], arr[i+1:], arr[0]
+    for number in arr[1:]:
+        if number > value:
+            above.append(number)
+        else:
+            below.append(number)
+    return (below, above, pivot)
 
 
 def quicksort(arr):
-    print(arr)
     if len(arr) < 2:
         return arr
     (left, right, pivot) = q_splitter(arr)
@@ -29,5 +24,4 @@ def quicksort(arr):
     result.extend(sorted_left)
     result.append(pivot)
     result.extend(sorted_right)
-    print(result)
     return result

@@ -2,3 +2,5 @@ __pycache__/
 .vscode/
 mergesort_alice.py
 info.md
+graph_plotter2.py
+consec_word.py
