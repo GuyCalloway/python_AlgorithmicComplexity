@@ -12,8 +12,7 @@ def factorial(int):
 def factorial2(int):
     if int == 1:
         return 1
-    else:
-        return int * factorial2(int-1)
+    return int * factorial2(int-1)
 
 
 for f in [factorial, factorial2]:
